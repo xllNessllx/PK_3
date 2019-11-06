@@ -1,0 +1,198 @@
+
+PK_3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b0  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000104  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000104  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000134  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000038  00000000  00000000  00000170  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000006d1  00000000  00000000  000001a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000579  00000000  00000000  00000879  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002cc  00000000  00000000  00000df2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000054  00000000  00000000  000010c0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000373  00000000  00000000  00001114  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000120  00000000  00000000  00001487  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000028  00000000  00000000  000015a7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	21 c0       	rjmp	.+66     	; 0x46 <__bad_interrupt>
+   4:	20 c0       	rjmp	.+64     	; 0x46 <__bad_interrupt>
+   6:	1f c0       	rjmp	.+62     	; 0x46 <__bad_interrupt>
+   8:	1e c0       	rjmp	.+60     	; 0x46 <__bad_interrupt>
+   a:	1d c0       	rjmp	.+58     	; 0x46 <__bad_interrupt>
+   c:	1c c0       	rjmp	.+56     	; 0x46 <__bad_interrupt>
+   e:	1b c0       	rjmp	.+54     	; 0x46 <__bad_interrupt>
+  10:	1a c0       	rjmp	.+52     	; 0x46 <__bad_interrupt>
+  12:	19 c0       	rjmp	.+50     	; 0x46 <__bad_interrupt>
+  14:	18 c0       	rjmp	.+48     	; 0x46 <__bad_interrupt>
+  16:	17 c0       	rjmp	.+46     	; 0x46 <__bad_interrupt>
+  18:	16 c0       	rjmp	.+44     	; 0x46 <__bad_interrupt>
+  1a:	15 c0       	rjmp	.+42     	; 0x46 <__bad_interrupt>
+  1c:	14 c0       	rjmp	.+40     	; 0x46 <__bad_interrupt>
+  1e:	13 c0       	rjmp	.+38     	; 0x46 <__bad_interrupt>
+  20:	12 c0       	rjmp	.+36     	; 0x46 <__bad_interrupt>
+  22:	11 c0       	rjmp	.+34     	; 0x46 <__bad_interrupt>
+  24:	10 c0       	rjmp	.+32     	; 0x46 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_clear_bss>:
+  32:	20 e0       	ldi	r18, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	01 c0       	rjmp	.+2      	; 0x3c <.do_clear_bss_start>
+
+0000003a <.do_clear_bss_loop>:
+  3a:	1d 92       	st	X+, r1
+
+0000003c <.do_clear_bss_start>:
+  3c:	a0 36       	cpi	r26, 0x60	; 96
+  3e:	b2 07       	cpc	r27, r18
+  40:	e1 f7       	brne	.-8      	; 0x3a <.do_clear_bss_loop>
+  42:	2b d0       	rcall	.+86     	; 0x9a <main>
+  44:	33 c0       	rjmp	.+102    	; 0xac <_exit>
+
+00000046 <__bad_interrupt>:
+  46:	dc cf       	rjmp	.-72     	; 0x0 <__vectors>
+
+00000048 <_Z4initv>:
+void ledYellow();
+
+	bool red = false;
+
+void init(){
+	DDRB = 0b11111111;
+  48:	8f ef       	ldi	r24, 0xFF	; 255
+  4a:	87 bb       	out	0x17, r24	; 23
+	DDRC = 0b00000000;
+  4c:	14 ba       	out	0x14, r1	; 20
+	
+	PORTC = 0xFF;
+  4e:	85 bb       	out	0x15, r24	; 21
+  50:	08 95       	ret
+
+00000052 <_Z6ledRedv>:
+}
+
+void ledRed(){
+	while(1){
+		PORTB = (1 << PB0);
+  52:	81 e0       	ldi	r24, 0x01	; 1
+  54:	88 bb       	out	0x18, r24	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  56:	ef e4       	ldi	r30, 0x4F	; 79
+  58:	f3 ec       	ldi	r31, 0xC3	; 195
+  5a:	31 97       	sbiw	r30, 0x01	; 1
+  5c:	f1 f7       	brne	.-4      	; 0x5a <_Z6ledRedv+0x8>
+  5e:	00 c0       	rjmp	.+0      	; 0x60 <_Z6ledRedv+0xe>
+  60:	00 00       	nop
+		_delay_ms(200);
+		PORTB = (0 << PB0);
+  62:	18 ba       	out	0x18, r1	; 24
+  64:	ef e4       	ldi	r30, 0x4F	; 79
+  66:	f3 ec       	ldi	r31, 0xC3	; 195
+  68:	31 97       	sbiw	r30, 0x01	; 1
+  6a:	f1 f7       	brne	.-4      	; 0x68 <_Z6ledRedv+0x16>
+  6c:	00 c0       	rjmp	.+0      	; 0x6e <_Z6ledRedv+0x1c>
+  6e:	00 00       	nop
+		_delay_ms(200);
+		if(~PINC & 0x02){
+  70:	99 99       	sbic	0x13, 1	; 19
+  72:	f0 cf       	rjmp	.-32     	; 0x54 <_Z6ledRedv+0x2>
+			break;
+		}
+	}
+}
+  74:	08 95       	ret
+
+00000076 <_Z9ledYellowv>:
+
+void ledYellow(){
+	while(1){
+		PORTB = (1 << PB1);
+  76:	82 e0       	ldi	r24, 0x02	; 2
+  78:	88 bb       	out	0x18, r24	; 24
+  7a:	ef e4       	ldi	r30, 0x4F	; 79
+  7c:	f3 ec       	ldi	r31, 0xC3	; 195
+  7e:	31 97       	sbiw	r30, 0x01	; 1
+  80:	f1 f7       	brne	.-4      	; 0x7e <_Z9ledYellowv+0x8>
+  82:	00 c0       	rjmp	.+0      	; 0x84 <_Z9ledYellowv+0xe>
+  84:	00 00       	nop
+		_delay_ms(200);
+		PORTB = (0 << PB1);
+  86:	18 ba       	out	0x18, r1	; 24
+  88:	ef e4       	ldi	r30, 0x4F	; 79
+  8a:	f3 ec       	ldi	r31, 0xC3	; 195
+  8c:	31 97       	sbiw	r30, 0x01	; 1
+  8e:	f1 f7       	brne	.-4      	; 0x8c <_Z9ledYellowv+0x16>
+  90:	00 c0       	rjmp	.+0      	; 0x92 <_Z9ledYellowv+0x1c>
+  92:	00 00       	nop
+		_delay_ms(200);
+		if(~PINC & 0x01){
+  94:	98 99       	sbic	0x13, 0	; 19
+  96:	f0 cf       	rjmp	.-32     	; 0x78 <_Z9ledYellowv+0x2>
+			break;
+		}
+	}
+}
+  98:	08 95       	ret
+
+0000009a <main>:
+
+int main(void)
+{
+    /* Replace with your application code */
+	
+	init();
+  9a:	d6 df       	rcall	.-84     	; 0x48 <_Z4initv>
+	
+    while (1) 
+    {
+	
+		if(~PINC & 0x01){
+  9c:	98 99       	sbic	0x13, 0	; 19
+  9e:	02 c0       	rjmp	.+4      	; 0xa4 <main+0xa>
+			ledRed();
+  a0:	d8 df       	rcall	.-80     	; 0x52 <_Z6ledRedv>
+  a2:	fc cf       	rjmp	.-8      	; 0x9c <main+0x2>
+		}
+		else if(~PINC & 0x02){
+  a4:	99 99       	sbic	0x13, 1	; 19
+  a6:	fa cf       	rjmp	.-12     	; 0x9c <main+0x2>
+			ledYellow();
+  a8:	e6 df       	rcall	.-52     	; 0x76 <_Z9ledYellowv>
+  aa:	f8 cf       	rjmp	.-16     	; 0x9c <main+0x2>
+
+000000ac <_exit>:
+  ac:	f8 94       	cli
+
+000000ae <__stop_program>:
+  ae:	ff cf       	rjmp	.-2      	; 0xae <__stop_program>

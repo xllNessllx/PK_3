@@ -8,28 +8,58 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-ISR(INT0_vect)
-{
-	class LED
-	{
-		
-	public:
-	         
-	void init() {ddrB.bit0 = 1;}         
-	void on() {portB.bit0 = 1;}         
-	void off() {portB.bit0 = 0;} 
+#define F_CPU 1000000UL
+#include <util/delay.h>
+
+void ledRed();
+void ledYellow();
+
+void init(){
+	DDRB = 0b11111111;
+	DDRC = 0b00000000;
 	
-	};
+	PORTC = 0xFF;
+}
+
+void ledRed(){
+	while(1){
+		PORTB = (1 << PB0);
+		_delay_ms(200);
+		PORTB = (0 << PB0);
+		_delay_ms(200);
+		if(~PINC & 0x02){
+			break;
+		}
+	}
+}
+
+void ledYellow(){
+	while(1){
+		PORTB = (1 << PB1);
+		_delay_ms(200);
+		PORTB = (0 << PB1);
+		_delay_ms(200);
+		if(~PINC & 0x01){
+			break;
+		}
+	}
 }
 
 int main(void)
 {
     /* Replace with your application code */
+	
+	init();
+	
     while (1) 
     {
-		
-		
-		
+	
+		if(~PINC & 0x01){
+			ledRed();
+		}
+		else if(~PINC & 0x02){
+			ledYellow();
+		}
     }
 }
 

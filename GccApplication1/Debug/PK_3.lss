@@ -3,53 +3,53 @@ PK_3.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000000b0  00000000  00000000  00000054  2**1
+  0 .text         000000c4  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000104  2**0
+  1 .data         00000000  00800060  00800060  00000118  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000104  2**0
+  2 .comment      00000030  00000000  00000000  00000118  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000134  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000148  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000038  00000000  00000000  00000170  2**0
+  4 .debug_aranges 00000040  00000000  00000000  00000184  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000006d1  00000000  00000000  000001a8  2**0
+  5 .debug_info   00000738  00000000  00000000  000001c4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000579  00000000  00000000  00000879  2**0
+  6 .debug_abbrev 00000575  00000000  00000000  000008fc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000002cc  00000000  00000000  00000df2  2**0
+  7 .debug_line   0000030d  00000000  00000000  00000e71  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000054  00000000  00000000  000010c0  2**2
+  8 .debug_frame  00000064  00000000  00000000  00001180  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000373  00000000  00000000  00001114  2**0
+  9 .debug_str    00000380  00000000  00000000  000011e4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000120  00000000  00000000  00001487  2**0
+ 10 .debug_loc    00000168  00000000  00000000  00001564  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000028  00000000  00000000  000015a7  2**0
+ 11 .debug_ranges 00000030  00000000  00000000  000016cc  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
-   2:	21 c0       	rjmp	.+66     	; 0x46 <__bad_interrupt>
-   4:	20 c0       	rjmp	.+64     	; 0x46 <__bad_interrupt>
-   6:	1f c0       	rjmp	.+62     	; 0x46 <__bad_interrupt>
-   8:	1e c0       	rjmp	.+60     	; 0x46 <__bad_interrupt>
-   a:	1d c0       	rjmp	.+58     	; 0x46 <__bad_interrupt>
-   c:	1c c0       	rjmp	.+56     	; 0x46 <__bad_interrupt>
-   e:	1b c0       	rjmp	.+54     	; 0x46 <__bad_interrupt>
-  10:	1a c0       	rjmp	.+52     	; 0x46 <__bad_interrupt>
-  12:	19 c0       	rjmp	.+50     	; 0x46 <__bad_interrupt>
-  14:	18 c0       	rjmp	.+48     	; 0x46 <__bad_interrupt>
-  16:	17 c0       	rjmp	.+46     	; 0x46 <__bad_interrupt>
-  18:	16 c0       	rjmp	.+44     	; 0x46 <__bad_interrupt>
-  1a:	15 c0       	rjmp	.+42     	; 0x46 <__bad_interrupt>
-  1c:	14 c0       	rjmp	.+40     	; 0x46 <__bad_interrupt>
-  1e:	13 c0       	rjmp	.+38     	; 0x46 <__bad_interrupt>
-  20:	12 c0       	rjmp	.+36     	; 0x46 <__bad_interrupt>
-  22:	11 c0       	rjmp	.+34     	; 0x46 <__bad_interrupt>
-  24:	10 c0       	rjmp	.+32     	; 0x46 <__bad_interrupt>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
 
 00000026 <__ctors_end>:
   26:	11 24       	eor	r1, r1
@@ -58,141 +58,160 @@ Disassembly of section .text:
   2c:	d4 e0       	ldi	r29, 0x04	; 4
   2e:	de bf       	out	0x3e, r29	; 62
   30:	cd bf       	out	0x3d, r28	; 61
+  32:	3d d0       	rcall	.+122    	; 0xae <main>
+  34:	45 c0       	rjmp	.+138    	; 0xc0 <_exit>
 
-00000032 <__do_clear_bss>:
-  32:	20 e0       	ldi	r18, 0x00	; 0
-  34:	a0 e6       	ldi	r26, 0x60	; 96
-  36:	b0 e0       	ldi	r27, 0x00	; 0
-  38:	01 c0       	rjmp	.+2      	; 0x3c <.do_clear_bss_start>
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
 
-0000003a <.do_clear_bss_loop>:
-  3a:	1d 92       	st	X+, r1
-
-0000003c <.do_clear_bss_start>:
-  3c:	a0 36       	cpi	r26, 0x60	; 96
-  3e:	b2 07       	cpc	r27, r18
-  40:	e1 f7       	brne	.-8      	; 0x3a <.do_clear_bss_loop>
-  42:	2b d0       	rcall	.+86     	; 0x9a <main>
-  44:	33 c0       	rjmp	.+102    	; 0xac <_exit>
-
-00000046 <__bad_interrupt>:
-  46:	dc cf       	rjmp	.-72     	; 0x0 <__vectors>
-
-00000048 <_Z4initv>:
+00000038 <_Z4initv>:
+void ledOff();
+void ledRed();
 void ledYellow();
-
-	bool red = false;
 
 void init(){
 	DDRB = 0b11111111;
-  48:	8f ef       	ldi	r24, 0xFF	; 255
-  4a:	87 bb       	out	0x17, r24	; 23
+  38:	8f ef       	ldi	r24, 0xFF	; 255
+  3a:	87 bb       	out	0x17, r24	; 23
 	DDRC = 0b00000000;
-  4c:	14 ba       	out	0x14, r1	; 20
+  3c:	14 ba       	out	0x14, r1	; 20
 	
 	PORTC = 0xFF;
-  4e:	85 bb       	out	0x15, r24	; 21
-  50:	08 95       	ret
+  3e:	85 bb       	out	0x15, r24	; 21
+  40:	08 95       	ret
 
-00000052 <_Z6ledRedv>:
-}
-
-void ledRed(){
-	while(1){
-		PORTB = (1 << PB0);
-  52:	81 e0       	ldi	r24, 0x01	; 1
-  54:	88 bb       	out	0x18, r24	; 24
+00000042 <_Z6ledOffv>:
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  56:	ef e4       	ldi	r30, 0x4F	; 79
-  58:	f3 ec       	ldi	r31, 0xC3	; 195
-  5a:	31 97       	sbiw	r30, 0x01	; 1
-  5c:	f1 f7       	brne	.-4      	; 0x5a <_Z6ledRedv+0x8>
-  5e:	00 c0       	rjmp	.+0      	; 0x60 <_Z6ledRedv+0xe>
-  60:	00 00       	nop
+  42:	8f e4       	ldi	r24, 0x4F	; 79
+  44:	93 ec       	ldi	r25, 0xC3	; 195
+  46:	01 97       	sbiw	r24, 0x01	; 1
+  48:	f1 f7       	brne	.-4      	; 0x46 <_Z6ledOffv+0x4>
+  4a:	00 c0       	rjmp	.+0      	; 0x4c <_Z6ledOffv+0xa>
+  4c:	00 00       	nop
+}
+
+void ledOff(){
+	while(1){
+		_delay_ms(200);
+		if(~PINC & 0x01){
+  4e:	98 9b       	sbis	0x13, 0	; 19
+			ledRed();
+  50:	04 d0       	rcall	.+8      	; 0x5a <_Z6ledRedv>
+		}
+		if(~PINC & 0x02){
+  52:	99 99       	sbic	0x13, 1	; 19
+  54:	f6 cf       	rjmp	.-20     	; 0x42 <_Z6ledOffv>
+			ledYellow();
+  56:	16 d0       	rcall	.+44     	; 0x84 <_Z9ledYellowv>
+  58:	f4 cf       	rjmp	.-24     	; 0x42 <_Z6ledOffv>
+
+0000005a <_Z6ledRedv>:
+	PORTC = 0xFF;
+}
+
+void ledRed(){
+	while(1){
+		PORTB = (1 << PB0);
+  5a:	81 e0       	ldi	r24, 0x01	; 1
+  5c:	88 bb       	out	0x18, r24	; 24
+  5e:	ef e4       	ldi	r30, 0x4F	; 79
+  60:	f3 ec       	ldi	r31, 0xC3	; 195
+  62:	31 97       	sbiw	r30, 0x01	; 1
+  64:	f1 f7       	brne	.-4      	; 0x62 <_Z6ledRedv+0x8>
+  66:	00 c0       	rjmp	.+0      	; 0x68 <_Z6ledRedv+0xe>
+  68:	00 00       	nop
 		_delay_ms(200);
 		PORTB = (0 << PB0);
-  62:	18 ba       	out	0x18, r1	; 24
-  64:	ef e4       	ldi	r30, 0x4F	; 79
-  66:	f3 ec       	ldi	r31, 0xC3	; 195
-  68:	31 97       	sbiw	r30, 0x01	; 1
-  6a:	f1 f7       	brne	.-4      	; 0x68 <_Z6ledRedv+0x16>
-  6c:	00 c0       	rjmp	.+0      	; 0x6e <_Z6ledRedv+0x1c>
-  6e:	00 00       	nop
+  6a:	18 ba       	out	0x18, r1	; 24
+  6c:	ef e4       	ldi	r30, 0x4F	; 79
+  6e:	f3 ec       	ldi	r31, 0xC3	; 195
+  70:	31 97       	sbiw	r30, 0x01	; 1
+  72:	f1 f7       	brne	.-4      	; 0x70 <_Z6ledRedv+0x16>
+  74:	00 c0       	rjmp	.+0      	; 0x76 <_Z6ledRedv+0x1c>
+  76:	00 00       	nop
 		_delay_ms(200);
 		if(~PINC & 0x02){
-  70:	99 99       	sbic	0x13, 1	; 19
-  72:	f0 cf       	rjmp	.-32     	; 0x54 <_Z6ledRedv+0x2>
+  78:	99 9b       	sbis	0x13, 1	; 19
+  7a:	03 c0       	rjmp	.+6      	; 0x82 <_Z6ledRedv+0x28>
 			break;
 		}
+		if(~PINC & 0x01){
+  7c:	98 99       	sbic	0x13, 0	; 19
+  7e:	ee cf       	rjmp	.-36     	; 0x5c <_Z6ledRedv+0x2>
+			ledOff();
+  80:	e0 df       	rcall	.-64     	; 0x42 <_Z6ledOffv>
+  82:	08 95       	ret
+
+00000084 <_Z9ledYellowv>:
 	}
 }
-  74:	08 95       	ret
-
-00000076 <_Z9ledYellowv>:
 
 void ledYellow(){
 	while(1){
 		PORTB = (1 << PB1);
-  76:	82 e0       	ldi	r24, 0x02	; 2
-  78:	88 bb       	out	0x18, r24	; 24
-  7a:	ef e4       	ldi	r30, 0x4F	; 79
-  7c:	f3 ec       	ldi	r31, 0xC3	; 195
-  7e:	31 97       	sbiw	r30, 0x01	; 1
-  80:	f1 f7       	brne	.-4      	; 0x7e <_Z9ledYellowv+0x8>
-  82:	00 c0       	rjmp	.+0      	; 0x84 <_Z9ledYellowv+0xe>
-  84:	00 00       	nop
-		_delay_ms(200);
-		PORTB = (0 << PB1);
-  86:	18 ba       	out	0x18, r1	; 24
+  84:	82 e0       	ldi	r24, 0x02	; 2
+  86:	88 bb       	out	0x18, r24	; 24
   88:	ef e4       	ldi	r30, 0x4F	; 79
   8a:	f3 ec       	ldi	r31, 0xC3	; 195
   8c:	31 97       	sbiw	r30, 0x01	; 1
-  8e:	f1 f7       	brne	.-4      	; 0x8c <_Z9ledYellowv+0x16>
-  90:	00 c0       	rjmp	.+0      	; 0x92 <_Z9ledYellowv+0x1c>
+  8e:	f1 f7       	brne	.-4      	; 0x8c <_Z9ledYellowv+0x8>
+  90:	00 c0       	rjmp	.+0      	; 0x92 <_Z9ledYellowv+0xe>
   92:	00 00       	nop
 		_delay_ms(200);
+		PORTB = (0 << PB1);
+  94:	18 ba       	out	0x18, r1	; 24
+  96:	ef e4       	ldi	r30, 0x4F	; 79
+  98:	f3 ec       	ldi	r31, 0xC3	; 195
+  9a:	31 97       	sbiw	r30, 0x01	; 1
+  9c:	f1 f7       	brne	.-4      	; 0x9a <_Z9ledYellowv+0x16>
+  9e:	00 c0       	rjmp	.+0      	; 0xa0 <_Z9ledYellowv+0x1c>
+  a0:	00 00       	nop
+		_delay_ms(200);
 		if(~PINC & 0x01){
-  94:	98 99       	sbic	0x13, 0	; 19
-  96:	f0 cf       	rjmp	.-32     	; 0x78 <_Z9ledYellowv+0x2>
+  a2:	98 9b       	sbis	0x13, 0	; 19
+  a4:	03 c0       	rjmp	.+6      	; 0xac <_Z9ledYellowv+0x28>
 			break;
 		}
-	}
-}
-  98:	08 95       	ret
+		if(~PINC & 0x02){
+  a6:	99 99       	sbic	0x13, 1	; 19
+  a8:	ee cf       	rjmp	.-36     	; 0x86 <_Z9ledYellowv+0x2>
+			ledOff();
+  aa:	cb df       	rcall	.-106    	; 0x42 <_Z6ledOffv>
+  ac:	08 95       	ret
 
-0000009a <main>:
+000000ae <main>:
 
 int main(void)
 {
     /* Replace with your application code */
 	
 	init();
-  9a:	d6 df       	rcall	.-84     	; 0x48 <_Z4initv>
+  ae:	c4 df       	rcall	.-120    	; 0x38 <_Z4initv>
 	
     while (1) 
     {
 	
 		if(~PINC & 0x01){
-  9c:	98 99       	sbic	0x13, 0	; 19
-  9e:	02 c0       	rjmp	.+4      	; 0xa4 <main+0xa>
+  b0:	98 99       	sbic	0x13, 0	; 19
+  b2:	02 c0       	rjmp	.+4      	; 0xb8 <main+0xa>
 			ledRed();
-  a0:	d8 df       	rcall	.-80     	; 0x52 <_Z6ledRedv>
-  a2:	fc cf       	rjmp	.-8      	; 0x9c <main+0x2>
+  b4:	d2 df       	rcall	.-92     	; 0x5a <_Z6ledRedv>
+  b6:	fc cf       	rjmp	.-8      	; 0xb0 <main+0x2>
 		}
 		else if(~PINC & 0x02){
-  a4:	99 99       	sbic	0x13, 1	; 19
-  a6:	fa cf       	rjmp	.-12     	; 0x9c <main+0x2>
+  b8:	99 99       	sbic	0x13, 1	; 19
+  ba:	fa cf       	rjmp	.-12     	; 0xb0 <main+0x2>
 			ledYellow();
-  a8:	e6 df       	rcall	.-52     	; 0x76 <_Z9ledYellowv>
-  aa:	f8 cf       	rjmp	.-16     	; 0x9c <main+0x2>
+  bc:	e3 df       	rcall	.-58     	; 0x84 <_Z9ledYellowv>
+  be:	f8 cf       	rjmp	.-16     	; 0xb0 <main+0x2>
 
-000000ac <_exit>:
-  ac:	f8 94       	cli
+000000c0 <_exit>:
+  c0:	f8 94       	cli
 
-000000ae <__stop_program>:
-  ae:	ff cf       	rjmp	.-2      	; 0xae <__stop_program>
+000000c2 <__stop_program>:
+  c2:	ff cf       	rjmp	.-2      	; 0xc2 <__stop_program>
